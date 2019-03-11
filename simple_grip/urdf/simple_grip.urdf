@@ -1,0 +1,149 @@
+<robot
+  name="simple_grip">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0251523239596374 0.0207801633747139 0.0820947860786335"
+        rpy="0 0 0" />
+      <mass
+        value="0.0847444618305853" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_grip/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_grip/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="First_Link">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 0.0542024176844595 -1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.12811061266654" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_grip/meshes/First_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_grip/meshes/First_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint1"
+    type="continuous">
+    <origin
+      xyz="0.025152 -0.082095 0"
+      rpy="1.5708 3.1786E-17 2.5958" />
+    <parent
+      link="base_link" />
+    <child
+      link="First_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Second_Link">
+    <inertial>
+      <origin
+        xyz="-0.0382855741370538 5.17743736216936E-08 -7.35539912745525E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.152333571535865" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_grip/meshes/Second_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_grip/meshes/Second_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Second_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.11728 0"
+      rpy="3.5805E-15 -4.996E-16 -0.52309" />
+    <parent
+      link="First_Link" />
+    <child
+      link="Second_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+</robot>
