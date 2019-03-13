@@ -1,0 +1,149 @@
+<robot
+  name="Assem1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00065124 0.0415 9.5205E-19"
+        rpy="0 0 0" />
+      <mass
+        value="0.22881" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="First_Link">
+    <inertial>
+      <origin
+        xyz="9.812E-18 0.071922 -3.4694E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.3459" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1/meshes/First_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1/meshes/First_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="First_Joint"
+    type="continuous">
+    <origin
+      xyz="0.00065124 0 0.003"
+      rpy="1.5708 4.1521E-17 0.74519" />
+    <parent
+      link="base_link" />
+    <child
+      link="First_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Second_Link">
+    <inertial>
+      <origin
+        xyz="-0.038286 4.0953E-08 -7.3566E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.4113" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1/meshes/Second_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1/meshes/Second_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Second_Joint"
+    type="continuous">
+    <origin
+      xyz="0 0.135 0"
+      rpy="1.1935E-15 -2.8866E-15 -2.7703" />
+    <parent
+      link="First_Link" />
+    <child
+      link="Second_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
